@@ -1,4 +1,6 @@
 import { signOut } from '../utils/auth';
+import { getBooks, booksOnSale, deleteBook } from '../api/bookData';
+import { showBooks } from '../pages/books';
 
 // navigation events
 const navigationEvents = () => {
@@ -9,10 +11,13 @@ const navigationEvents = () => {
   // TODO: BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
     console.warn('CLICKED SALE BOOKS');
+    booksOnSale().then(showBooks);
   });
 
   // TODO: ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
+    getBooks().then(showBooks);
+    getBooks().then((books) => console.warn(books));
     console.warn('CLICKED ALL BOOKS');
   });
 
