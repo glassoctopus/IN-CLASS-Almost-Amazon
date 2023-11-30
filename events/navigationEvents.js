@@ -1,5 +1,5 @@
 import { signOut } from '../utils/auth';
-import { getBooks, booksOnSale, deleteBook } from '../api/bookData';
+import { getBooks, booksOnSale } from '../api/bookData';
 import { showBooks } from '../pages/books';
 
 // navigation events
